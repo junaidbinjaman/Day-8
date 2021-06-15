@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="activity"></h1>
+    <h3>
+        Learn from:
+        <a id="explore_link" href="https://www.boredapi.com/api/activity" target="_blank">This Site
+      </a>
+    </h3>
+    <script>
+        function doSomething() {
+            fetch("https://www.boredapi.com/api/activity")
+                .then((res) => res.json())
+                .then((data) => {
+                    document.getElementById("activity").innerHTML = data.activity;
+                });
+        }
+        setInterval(() => {
+            doSomething();
+        }, 1000);
+    </script>
+</body>
+
+</html>
